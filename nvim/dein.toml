@@ -9,8 +9,17 @@ build = 'make'
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 let g:NERDTreeMinimalUI = 1
-nnoremap <Leader>f :NERDTreeToggle<CR>
 '''
+
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+hook_add = '''
+let g:nerdtree_tabs_open_on_console_startup = 2
+nnoremap <Leader>f :NERDTreeTabsToggle<CR>
+'''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
@@ -48,6 +57,12 @@ autocmd! BufWritePost * Neomake
 '''
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
@@ -72,3 +87,12 @@ hook_add = '''
 autocmd! VimEnter * nested colorscheme Tomorrow-Night-Blue
 '''
 
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
