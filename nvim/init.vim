@@ -45,18 +45,10 @@ nnoremap gj j
 nnoremap gk k
 nnoremap <Space> jzz
 nnoremap <S-Space> kzz
-nnoremap <C-b>l :bn<CR>
-nnoremap <C-b>h :bp<CR>
 nnoremap <C-b>c :bd<CR>
 nnoremap <C-b>n :enew
-nnoremap <C-t>l :tabnext<CR>
-nnoremap <C-t>h :tabprev<CR>
-nnoremap <C-t>c :tabclose<CR>
-nnoremap <C-t>n :tabnew<CR>
-nnoremap <C-t>o :tabonly<CR>
-nnoremap <C-t>a :tab ba<CR>
-nnoremap } :tabnext<CR>
-nnoremap { :tabprev<CR>
+nnoremap <TAB> :bn<CR>
+nnoremap <S-TAB> :bp<CR>
 nnoremap <Leader><Leader> :up<CR>
 inoremap jj <ESC>
 vnoremap <C-j> :m '>+1<CR>gv=gv
