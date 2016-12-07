@@ -25,3 +25,17 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 '''
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+on_ft = ['c','cc','cpp','h','hpp','objc','m','mm']
+hook_add = '''
+let g:clang_format#auto_format = 1
+let g:clang_format#style_options = {
+\ 'BasedOnStyle': 'Google',
+\ 'SortIncludes': 'false',
+\ 'AccessModifierOffset' : -2,
+\ 'AllowShortIfStatementsOnASingleLine' : 'true',
+\ 'AlwaysBreakTemplateDeclarations' : 'true',
+\ 'Standard' : 'C++11'}
+'''
