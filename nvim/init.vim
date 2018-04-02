@@ -9,6 +9,7 @@ set nofoldenable
 set noswapfile
 set nobackup
 set autoindent
+set autowrite
 set nojoinspaces
 set ttyfast
 set gdefault
@@ -27,8 +28,7 @@ set backspace=indent,eol,start
 set nostartofline
 set noshowmode
 set showcmd
-set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:¦_,eol:¬
 set history=256
 set undodir=~/.config/nvim/undo undolevels=256
 set undofile

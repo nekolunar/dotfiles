@@ -16,63 +16,11 @@ nnoremap <Leader>f :NERDTreeToggle<CR>
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
-on_i = 1
 hook_add = '''
-let g:tagbar_autofocus = 1
-nnoremap <Leader>x :TagbarToggle<CR>
-'''
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = 'has("nvim")'
-on_i = 1
-hook_add = '''
-set completeopt+=noselect
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><tab> pumvisible() ? "<C-n>" : "<TAB>"
-inoremap <expr><s-tab> pumvisible() ? "<C-p>" : "<TAB>"
-autocmd! InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-'''
-
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_i = 1
-on_ft = 'go'
-build = 'make'
-hook_add = '''
-let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-'''
-
-[[plugins]]
-repo = 'zchee/deoplete-clang'
-on_ft = ['c','cc','cpp','cmake']
-hook_add = '''
-let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
-let g:deoplete#sources#clang#std = {'c': 'c11', 'cpp': 'c++1z', 'objc': 'c11', 'objcpp': 'c++1z'}
-let g:deoplete#sources#clang#sort_algo = 'priority'
-'''
-
-[[plugins]]
-repo = 'neomake/neomake'
-hook_add = '''
-autocmd! BufWritePost * Neomake
-let g:neomake_cpp_clang_maker = {
-\ 'args': ['-fsyntax-only', '-std=c++14', '-Wall', '-Wextra'],
-\ 'errorformat':
-\ '%-G%f:%s:,' .
-\ '%f:%l:%c: %trror: %m,' .
-\ '%f:%l:%c: %tarning: %m,' .
-\ '%f:%l:%c: %m,'.
-\ '%f:%l: %trror: %m,'.
-\ '%f:%l: %tarning: %m,'.
-\ '%f:%l: %m',
-\ }
-let g:neomake_cpp_enabled_makers = ['clang']
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg)$',
+  \ }
 '''
 
 [[plugins]]
@@ -85,25 +33,12 @@ repo = 'airblade/vim-gitgutter'
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'vim-jp/cpp-vim'
-on_ft = 'cpp'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
-
-[[plugins]]
-repo = 'rcmdnk/vim-markdown'
-on_ft = ['markdown', 'mkd', 'md']
-
-[[plugins]]
-repo = 'chriskempson/vim-tomorrow-theme'
+repo = 'morhetz/gruvbox'
 hook_add = '''
-autocmd! VimEnter * nested colorscheme Tomorrow-Night-Blue
+set background=dark
+let g:gruvbox_bold = '0'
+let g:gruvbox_contrast_dark = 'hard'
+autocmd! VimEnter * nested colorscheme gruvbox
 '''
 
 [[plugins]]
@@ -116,3 +51,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme = 'gruvbox'
+'''
