@@ -4,12 +4,12 @@
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod"],
+      "rootPatterns": ["go.mod", ".vim/", ".git/"],
       "filetypes": ["go"],
       "initializationOptions": {
-        "diagnosticsEnabled": true,
-        "formatTool": "goimports",
-        "lintTool": "golint"
+        "staticcheck": true,
+        "usePlaceholders": true,
+        "completeUnimported": true
       }
     }
   }

@@ -1,3 +1,5 @@
 nvim/dein
 nvim/undo
 gcloud
+coc
+configstore
